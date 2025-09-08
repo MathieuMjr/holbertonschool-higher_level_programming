@@ -9,3 +9,17 @@ def add_tuple(tuple_a=(), tuple_b=()):
     tuple_a = tuple_a[:2]
     tuple_b = tuple_b[:2]
     return (tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1])
+
+# ALTERNATIVES DONNEES PAR CHAT GPT :
+
+# Version compacte avec "normalisation"
+# def add_tuple(tuple_a=(), tuple_b=()):
+#    a = (tuple_a + (0, 0))[:2]
+#    b = (tuple_b + (0, 0))[:2]
+#    return (a[0] + b[0], a[1] + b[1])
+
+# Version pythonique avec déballage
+# def add_tuple(tuple_a=(), tuple_b=()):
+#    (a1, a2) = (tuple_a + (0, 0))[:2]
+#    (b1, b2) = (tuple_b + (0, 0))[:2]
+#    return (a1 + b1, a2 + b2)
