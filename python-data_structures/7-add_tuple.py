@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
     tuple_a += (0, 0)
 # normalisation, après ça : tuple_a = (a, b, 0 , 0)
