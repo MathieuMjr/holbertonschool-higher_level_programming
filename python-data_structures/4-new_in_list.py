@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    return [element if idx == element else my_list[i]
+    return [element if i == idx else my_list[i]
             for i in range(0, len(my_list))]
 
 #    new_list = []
