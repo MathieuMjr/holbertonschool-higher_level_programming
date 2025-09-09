@@ -1,0 +1,1 @@
+Here are function I wrote to train with sets, dictionaries, lambda functions, map, filter and reduce functions
