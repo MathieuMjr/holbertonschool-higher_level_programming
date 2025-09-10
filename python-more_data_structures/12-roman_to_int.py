@@ -11,6 +11,16 @@ def roman_to_int(roman_string):
             and (roman_string[i + 1] == "X" or roman_string[i + 1] == "V")
         ):
             number -= 1
+        elif roman_string[i] == "X" and (
+            i + 1 < len(roman_string)
+            and (roman_string[i + 1] == "C" or roman_string[i + 1] == "L")
+        ):
+            number -= roman[roman_string[i]]
+        elif roman_string[i] == "C" and (
+            i + 1 < len(roman_string)
+            and (roman_string[i + 1] == "D" or roman_string[i + 1] == "M")
+        ):
+            number -= roman[roman_string[i]]
         else:
             number += roman[roman_string[i]]
     return number
