@@ -5,7 +5,9 @@ def roman_to_int(roman_string):
 
     if not roman_string:
         return None
-    for char in roman_string:
-        if roman.get(char, 0) != 0:
-            number += roman[char]
+    for i in range(0, len(roman_string)):
+        if roman_string[i] == 'I' and i == 0:
+            number -= 1
+        else:
+            number += roman[roman_string[i]]
     return number
