@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     number = 0
 
     if roman_string is None or not isinstance(roman_string, str):
-        return None
+        return 0
     for i in range(0, len(roman_string)):
         if roman_string[i] == "I" and (
             i + 1 < len(roman_string)
