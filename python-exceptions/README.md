@@ -1,0 +1,1 @@
+Here are functions and programs I wrote to practice exceptions
