@@ -10,4 +10,10 @@ def safe_print_list_integers(my_list=[], x=0):
         print("")
         return counter
     except (IndexError, NameError, ValueError):
+        # on peut ne mettre que except: raise dans notre cas
+        # car le checker n'attends pas d'instruction spécifique
+        # selon le type d'erreur mais le comportement naturel de Python
+        # ...
         raise
+# raise permet d'avoir le résultat du traceback, on dit qu'elle est
+# relancée
