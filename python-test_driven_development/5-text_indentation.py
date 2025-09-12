@@ -13,7 +13,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     counter = 0
     for idx in range(0, len(text)):
-        if text[idx] != " " and text[idx - 1] in [".", ":", "?"]:
+        if text[idx] != " ":
             counter = 0
         if text[idx] == " " and counter != 0:
             continue
