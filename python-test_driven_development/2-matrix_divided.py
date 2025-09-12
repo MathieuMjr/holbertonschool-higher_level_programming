@@ -9,8 +9,10 @@ by a divider
 
 def matrix_divided(matrix, div):
     """divid each number in a matrice by a divider"""
-    if len(matrix[0]) != len(matrix[1]):
-        raise TypeError("Each row of the matrix must have the same size")
+    row_length = len(matrix[0])
+    for ligne in matrix:
+        if len(matrix[ligne]) != row_length:
+            raise TypeError("Each row of the matrix must have the same size")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if type(div) not in [int, float]:
