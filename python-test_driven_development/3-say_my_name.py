@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""
+3-say_my_name.py
+
+This module contains a fonction that print "My name is..."
+and put a first_name and a last_name
+"""
+
+
 def say_my_name(first_name, last_name=""):
+    """print "My name is first_name last_name"""
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
