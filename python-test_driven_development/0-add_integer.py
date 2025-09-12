@@ -14,7 +14,9 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    if isinstance(a, float) and a >= 10.0**1000:
+    if isinstance(a, float) and (a == float('inf') or b == float('-inf')):
+        raise OverflowError
+    if isinstance(b, float) and (b == float('inf') or b == float('-inf')):
         raise OverflowError
     else:
         return int(a) + int(b)
