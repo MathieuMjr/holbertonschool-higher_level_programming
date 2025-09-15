@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-class Square():
+"""Ce module contient la classe Square qui représente un carré."""
+
+
+class Square:
     """
     Cette classe eprésente un carré.
     Elle n'est pas définie pour l'instant.
@@ -11,4 +14,5 @@ class Square():
     Methods:
         Aucune pour l'instant.
     """
+
     pass
