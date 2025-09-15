@@ -2,6 +2,7 @@
 
 """Ce module contient la classe Square qui représente un carré."""
 
+
 class Square:
     """
     Cette classe représente un carré.
@@ -9,9 +10,9 @@ class Square:
     """
 
     def __init__(self, size=None):
-        """ 
+        """
         Initialise un carré
-        
+
         Args:
             size (int): Taille du carré.
         """
