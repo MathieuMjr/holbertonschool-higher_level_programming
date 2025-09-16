@@ -73,7 +73,7 @@ class Square:
             for ligne in range(0, self.__size):
                 if self.__position[0] > 0:
                     for underscore in range(0, self.__position[0]):
-                        print("_", end="")
+                        print(" ", end="")
                 for element in range(0, self.__size):
                     print("#", end="")
                 print()
