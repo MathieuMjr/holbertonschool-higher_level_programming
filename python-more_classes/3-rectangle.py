@@ -84,7 +84,7 @@ class Rectangle:
         """
         res = ""
         if self.height == 0 or self.width == 0:
-            return '\n'
+            return res
         else:
             for ligne in range(0, self.height):
                 for element in range(0, self.width):
