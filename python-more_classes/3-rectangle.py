@@ -84,7 +84,7 @@ class Rectangle:
         """
         res = ""
         if self.height == 0 or self.width == 0:
-            res += '\n'
+            return '\n'
         else:
             for ligne in range(0, self.height):
                 for element in range(0, self.width):
@@ -92,5 +92,3 @@ class Rectangle:
                 if ligne != self.height - 1:
                     res += '\n'
         return res
-    # le [:-1] permet d'éliminer un dernier saut non voulu (ou
-    # perturbe le checker du moins)
