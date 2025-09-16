@@ -82,6 +82,15 @@ class Rectangle:
         It returns a string so it can be send to
         print.
         """
-        return ((("#" * self.width) + '\n') * self.height)[:-1]
+        res = ""
+        if self.height == 0 or self.width == 0:
+            res += '\n'
+        else:
+            for ligne in range(0, self.height):
+                for element in range(0, self.width):
+                    res += '#'
+                if ligne != self.height - 1:
+                    res += '\n'
+        return res
     # le [:-1] permet d'éliminer un dernier saut non voulu (ou
     # perturbe le checker du moins)
