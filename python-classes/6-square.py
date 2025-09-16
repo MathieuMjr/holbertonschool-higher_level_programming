@@ -16,8 +16,8 @@ class Square:
         Args:
             size (int): Taille du carré.
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -49,8 +49,21 @@ class Square:
         Setter: permet de modifier l'attribut privé selon les conditions fixées
         pour les coordonées/la position du carré
         """
-        if not isinstance(coordinates, tuple) and len(coordinates) != 2:
+        if not isinstance(coordinates, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
+        if isinstance(coordinates, tuple):
+            if len(coordinates) != 2:
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
+            elif not isinstance(coordinates[0], int) or not isinstance(
+                coordinates[1], int
+            ):
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
+            elif coordinates[0] < 0 or coordinates[1] < 0:
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
+
         self.__position = tuple(coordinates)
 
     def area(self):
