@@ -61,7 +61,8 @@ class Square:
 
     def my_print(self):
         """
-        Dessine le carré avec des symboles "#"
+        Dessine le carré avec des symboles "#" à la position
+        donnée à l'objet.
         """
         if self.__size == 0:
             print()
@@ -70,8 +71,9 @@ class Square:
                 for space in range(0, self.__position[1]):
                     print()
             for ligne in range(0, self.__size):
-                for underscore in range(0, self.__position[0]):
-                    print("_", end="")
+                if self.__position[0] > 0:
+                    for underscore in range(0, self.__position[0]):
+                        print("_", end="")
                 for element in range(0, self.__size):
                     print("#", end="")
                 print()
