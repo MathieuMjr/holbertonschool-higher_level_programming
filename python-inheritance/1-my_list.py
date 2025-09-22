@@ -19,6 +19,7 @@ class MyList(list):
         for element in self:
             if not isinstance(element, int):
                 raise ValueError
+                return
             new_list.append(element)
         new_list.sort()
         print(new_list)
