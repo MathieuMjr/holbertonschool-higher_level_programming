@@ -1,0 +1,1 @@
+here a functions I wrote to practice inheritance concept
