@@ -1,74 +1,66 @@
 #!/usr/bin/env python3
-"""Module for geometric shapes using abstract base classes."""
-
+"""
+This module contains classes related to shapes
+Shape is an abstract class with abstract methods
+"""
 from abc import ABC, abstractmethod
-from math import pi
+import math
 
 
 class Shape(ABC):
-    """Abstract class representing a geometric shape."""
+    """
+    This class represent a geomtric shape
+    Its an abstract class.
+    Eache subclass of shape should have
+    2 abstract methods : area & perimeter
+    """
 
     @abstractmethod
     def area(self):
-        """Compute the area of the shape."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Compute the perimeter of the shape."""
         pass
 
 
 class Circle(Shape):
-    """Circle shape with a radius."""
+    """
+    This  class represent a circle.
+    It has a radius.
+    """
 
     def __init__(self, radius):
-        """
-        Initialize a Circle.
-
-        Args:
-            radius (float): The radius of the circle.
-        """
-        self._radius = radius
+        self.__radius = radius
 
     def area(self):
-        """Compute the area of the circle."""
-        return pi * self._radius ** 2
+        return math.pi * self.__radius**2
 
     def perimeter(self):
-        """Compute the perimeter of the circle."""
-        return 2 * pi * self._radius
+        return 2 * math.pi * self.__radius
 
 
 class Rectangle(Shape):
-    """Rectangle shape with width and height."""
+    """
+    This class represent a rectangle.
+    It has a width and a height
+    """
 
     def __init__(self, width, height):
-        """
-        Initialize a Rectangle.
-
-        Args:
-            width (float): The width of the rectangle.
-            height (float): The height of the rectangle.
-        """
-        self._width = width
-        self._height = height
+        self.__width = width
+        self.__height = height
 
     def area(self):
-        """Compute the area of the rectangle."""
-        return self._width * self._height
+        return self.__width * self.__height
 
     def perimeter(self):
-        """Compute the perimeter of the rectangle."""
-        return 2 * (self._width + self._height)
+        return 2 * (self.__width + self.__height)
 
 
 def shape_info(shape):
     """
-    Print the area and perimeter of a shape.
-
-    Args:
-        shape (Shape): The shape object to inspect.
+    This function takes an object
+    and print its area or a perimeter.
     """
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
