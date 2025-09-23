@@ -31,13 +31,13 @@ class Circle(Shape):
     """
 
     def __init__(self, radius):
-        self.__radius = radius
+        self._radius = radius
 
     def area(self):
-        return pi * self.__radius**2
+        return pi * self._radius**2
 
     def perimeter(self):
-        return 2 * pi * self.__radius
+        return 2 * pi * self._radius
 
 
 class Rectangle(Shape):
@@ -47,20 +47,20 @@ class Rectangle(Shape):
     """
 
     def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
+        self._width = width
+        self._height = height
 
     def area(self):
-        return self.__width * self.__height
+        return self._width * self._height
 
     def perimeter(self):
-        return 2 * (self.__width + self.__height)
+        return 2 * (self._width + self._height)
 
 
 def shape_info(shape):
     """
-    This function takes an object
-    and print its area or a perimeter.
+    This function takes a shape object
+    and prints its area and perimeter.
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
