@@ -62,5 +62,5 @@ def shape_info(shape):
     This function takes an object
     and print its area or a perimeter.
     """
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
