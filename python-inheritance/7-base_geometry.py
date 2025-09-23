@@ -10,8 +10,9 @@ class BaseGeometry:
     """
     def area(self):
         """
-        Function not defined yet
-        Raises an execption
+        Function that raise exception by default
+        Will be redefines in subclass for each
+        geometry
         """
         raise Exception("area() is not implemented")
 
