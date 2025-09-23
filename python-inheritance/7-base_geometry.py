@@ -12,7 +12,7 @@ class BaseGeometry:
         """
         Function that raise exception by default
         Will be redefines in subclass for each
-        geometry
+        geometrys
         """
         raise Exception("area() is not implemented")
 
