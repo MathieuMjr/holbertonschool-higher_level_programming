@@ -23,14 +23,6 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
-    def shape_info(self):
-        """
-        This function takes an object
-        and print its area or a perimeter.
-        """
-        print("Area: {}".format(self.area()))
-        print("Perimeter: {}".format(self.perimeter()))
-
 
 class Circle(Shape):
     """
@@ -63,3 +55,12 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return 2 * (self.__width + self.__height)
+
+
+def shape_info(shape):
+    """
+    This function takes an object
+    and print its area or a perimeter.
+    """
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
