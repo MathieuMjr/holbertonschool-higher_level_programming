@@ -32,5 +32,8 @@ class VerboseList(list):
             print(e)
 
     def pop(self, index=-1):
-        valeur = super().pop(index)
-        print(f"Popped {valeur} from the list.")
+        try:
+            valeur = super().pop(index)
+            print(f"Popped {valeur} from the list.")
+        except Exception as e:
+            print(e)
