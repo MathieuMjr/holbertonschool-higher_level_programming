@@ -11,6 +11,8 @@ class CountedIterator:
     """Iterator that counts the number of elements returned."""
 
     def __init__(self, iterable):
+        if not isinstance(iterable, (tuple, list, str)):
+            raise TypeError
         self.iter_object = iter(iterable)
         self.counter = 0
 

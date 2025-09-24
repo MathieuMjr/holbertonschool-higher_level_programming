@@ -3,6 +3,7 @@ from task_03_countediterator import CountedIterator
 
 data = [1, 2, 3, 4]
 counted_iter = CountedIterator(data)
+iter2 = CountedIterator((12))
 
 try:
     while True:
