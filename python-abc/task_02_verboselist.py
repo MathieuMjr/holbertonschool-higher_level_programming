@@ -18,25 +18,25 @@ class VerboseList(list):
 
     def append(self, item):
         super().append(item)
-        print(f"Added {item} to the list")
+        print(f"Added [{item}] to the list")
 
     def extend(self, item):
         try:
             super().extend(item)
-            print(f"Extended the list with {len(item)} items.")
+            print(f"Extended the list with [{len(item)}] items.")
         except Exception as e:
             print(e)
 
     def remove(self, item):
         try:
             super().remove(item)
-            print(f"Removed {item} from the list.")
+            print(f"Removed [{item}] from the list.")
         except Exception as e:
             print(e)
 
     def pop(self, index=-1):
         try:
             valeur = super().pop(index)
-            print(f"Popped {valeur} from the list.")
+            print(f"Popped [{valeur}] from the list.")
         except Exception as e:
             print(e)
