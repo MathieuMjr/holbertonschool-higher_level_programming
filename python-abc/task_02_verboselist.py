@@ -21,8 +21,11 @@ class VerboseList(list):
         print(f"Added {item} to the list")
 
     def extend(self, item):
-        super().extend(item)
-        print(f"Extended the list with {len(item)} items.")
+        try:
+            super().extend(item)
+            print(f"Extended the list with {len(item)} items.")
+        except Exception as e:
+            print(e)
 
     def remove(self, item):
         try:
