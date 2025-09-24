@@ -21,22 +21,14 @@ class VerboseList(list):
         print(f"Added [{item}] to the list")
 
     def extend(self, item):
-        try:
-            super().extend(item)
-            print(f"Extended the list with [{len(item)}] items.")
-        except Exception as e:
-            print(e)
+        super().extend(item)
+        print(f"Extended the list with [{len(item)}] items.")
 
     def remove(self, item):
-        try:
-            super().remove(item)
-            print(f"Removed [{item}] from the list.")
-        except Exception as e:
-            print(e)
+        super().remove(item)
+        print(f"Removed [{item}] from the list.")
 
     def pop(self, index=-1):
-        try:
-            valeur = super().pop(index)
-            print(f"Popped [{valeur}] from the list.")
-        except Exception as e:
-            print(e)
+        valeur = super().pop(index)
+        print(f"Popped [{valeur}] from the list.")
+        return valeur
