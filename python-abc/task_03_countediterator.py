@@ -22,8 +22,8 @@ class CountedIterator:
         """Return the next element and increment the counter; raises
         StopIteration when exhausted."""
         try:
-            self.__counter += 1
             item = next(self.__iter_object)
+            self.__counter += 1
             return item
         except StopIteration:
             raise
