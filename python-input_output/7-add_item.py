@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-
+"""
+This module contains a program that
+calls a list from a specific json file,
+append it, and the updates made.
+"""
 import sys
 import os
 
