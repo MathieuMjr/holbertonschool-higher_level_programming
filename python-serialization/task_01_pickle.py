@@ -22,8 +22,11 @@ class CustomObject:
         the binary file containing
         the serialized object
         """
-        with open(filename, 'rb') as file:
-            return pickle.load(file)
+        try:
+            with open(filename, 'rb') as file:
+                return pickle.load(file)
+        except Exception:
+            return None
 
     def __init__(self, name, age, is_student):
         self.name = name
