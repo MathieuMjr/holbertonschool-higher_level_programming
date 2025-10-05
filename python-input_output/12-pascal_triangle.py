@@ -1,7 +1,15 @@
 #!/usr/bin/python3
+""""
+This module contain a function
+that compute a pascal triangle
+"""
 
 
 def pascal_triangle(n):
+    """
+    This function create a list
+    of list of a pascal triangle
+    """
     my_list = []
     for i in range(1, n + 1):
         new_list = []
