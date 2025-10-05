@@ -1,12 +1,27 @@
 #!/usr/bin/python3
 
+"""
+This module contains an object
+ to train on serialization
+ and deserialization
+ """
 import pickle
 
 
 class CustomObject:
-
+    """
+    This class don't represent anything
+    but shows how to create serialization
+    and deserialization using pickle
+    module
+    """
     @classmethod
     def deserialize(cls, filename):
+        """
+        Recreate an object from
+        the binary file containing
+        the serialized object
+        """
         with open(filename, 'rb') as file:
             return pickle.load(file)
 
@@ -16,6 +31,10 @@ class CustomObject:
         self.is_student = is_student
 
     def serialize(self, filename):
+        """
+        Serialize and object in binary
+        and stores it in a file
+        """
         with open(filename, 'wb') as file:
             return pickle.dump(self, file)
 
