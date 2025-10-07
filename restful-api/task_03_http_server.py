@@ -18,12 +18,12 @@ class handler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            self.wfile.write(b"<h1>Hello World !</h1>")
+            self.wfile.write(b"<h1>Hello, this is a simple API!</h1>")
         elif self.path == "/status":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"ok")
+            self.wfile.write(b"OK")
         elif self.path == "/info":
             data = {"version": "1.0", "description":
                     "A simple API built with http.server"}
