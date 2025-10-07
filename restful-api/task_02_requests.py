@@ -39,7 +39,6 @@ def fetch_and_save_posts():
             if key == "id" or key == "title" or key == "body":
                 new_dict[key] = element[key]
         new_list.append(new_dict)
-    print(new_list)
     labels = ["id", "title", "body"]
     with open("posts.csv", 'w') as file:
         writer = csv.DictWriter(file, fieldnames=labels)
