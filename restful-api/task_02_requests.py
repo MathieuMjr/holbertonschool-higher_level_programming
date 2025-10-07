@@ -32,16 +32,16 @@ def fetch_and_save_posts():
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
     if response.status_code == 200:
         dict_list = response.json()
-    new_list = []
-    for element in dict_list:
-        new_dict = {}
-        for key in element:
-            if key == "id" or key == "title" or key == "body":
-                new_dict[key] = element[key]
-        new_list.append(new_dict)
-    labels = ["id", "title", "body"]
-    with open("posts.csv", 'w') as file:
-        writer = csv.DictWriter(file, fieldnames=labels)
-        writer.writeheader()
-        for element in new_list:
-            writer.writerow(element)
+        new_list = []
+        for element in dict_list:
+            new_dict = {}
+            for key in element:
+                if key == "id" or key == "title" or key == "body":
+                    new_dict[key] = element[key]
+            new_list.append(new_dict)
+        labels = ["id", "title", "body"]
+        with open("posts.csv", 'w') as file:
+            writer = csv.DictWriter(file, fieldnames=labels)
+            writer.writeheader()
+            for element in new_list:
+                writer.writerow(element)
