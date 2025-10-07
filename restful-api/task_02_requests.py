@@ -16,7 +16,7 @@ def fetch_and_print_posts():
     API call
     """
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
-    print(r.status_code)
+    print(f"Status Code: {r.status_code}")
     data_json = r.json()
     for element in data_json:
         for key, value in element.items():
