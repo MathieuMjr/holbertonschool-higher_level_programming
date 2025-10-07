@@ -16,9 +16,9 @@ class handler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json_data.encode())
         elif self.path == "/":
             self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"<h1>Hello, this is a simple API!</h1>")
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == "/status":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
