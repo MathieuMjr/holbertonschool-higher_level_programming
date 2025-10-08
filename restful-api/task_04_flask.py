@@ -7,7 +7,7 @@ from flask import request
 
 app = Flask(__name__)
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+users = {}
 
 
 @app.route("/")
@@ -25,7 +25,7 @@ def add_user():
     global users
     new_user = request.get_json()
     if "username" not in new_user:
-        return jsonify("{'error' : 'username is required'}")
+        return jsonify("{'error' : 'username is required'}"), 400
     user_info = {}
     for key, value in new_user.items():
         if key != "username":
