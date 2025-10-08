@@ -31,14 +31,9 @@ def add_user():
             {"error": f"User{new_user['username']} already exists"}), 409
     user_info = {}
     for key, value in new_user.items():
-        if key != "username":
-            user_info[key] = value
+        user_info[key] = value
     users[new_user["username"]] = user_info
-    return (
-        jsonify({"message": "User added",
-                "user": user_info}),
-        201,
-    )
+    return (jsonify({"message": "User added", "user": user_info}), 201)
 
 
 @app.route("/users/<username>")
