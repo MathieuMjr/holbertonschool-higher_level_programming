@@ -35,7 +35,7 @@ def add_user():
             user_info[key] = value
     users[new_user["username"]] = user_info
     return (
-        jsonify({"message": f"User {new_user['username']} added",
+        jsonify({"message": "User added",
                 "user": user_info}),
         201,
     )
