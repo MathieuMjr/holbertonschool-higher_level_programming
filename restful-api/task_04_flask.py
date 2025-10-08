@@ -25,10 +25,10 @@ def add_user():
     global users
     new_user = request.get_json()
     if "username" not in new_user:
-        return jsonify({"error": "username is required"}), 400
+        return jsonify({"error": "Username is required"}), 400
     if new_user['username'] in users:
         return jsonify(
-            {"error": f"User{new_user['username']} already exists"}), 409
+            {"error": f"User {new_user['username']} already exists"}), 409
     user_info = {}
     for key, value in new_user.items():
         user_info[key] = value
