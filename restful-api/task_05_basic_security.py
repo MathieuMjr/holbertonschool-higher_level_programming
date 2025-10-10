@@ -59,7 +59,8 @@ def index():
         return jsonify({"msg": "Bad credentials"}), 401
     # Sinon on génère le token
     access_token = create_access_token(
-        identity=json.dumps({"username": username, "role": user_info["role"]}))
+        identity=json.dumps({"username": username, "role": user_info["role"]})
+    )
     return jsonify(access_token=access_token)
 
 
@@ -67,7 +68,7 @@ def index():
 @jwt_required()
 def admin_access():
     current_user = json.loads(get_jwt_identity())
-    if current_user['role'] == "admin":
+    if current_user["role"] == "admin":
         return "Admin Access: Granted"
     else:
         return jsonify({"error": "Admin access required"}), 403
@@ -78,6 +79,31 @@ def admin_access():
 def protected():
     get_jwt_identity()
     return "JWT Auth: Access Granted"
+
+
+@jwt.unauthorized_loader
+def handle_unauthorized_error(err):
+    return jsonify({"error": "Missing or invalid token"}), 401
+
+
+@jwt.invalid_token_loader
+def handle_invalid_token_error(err):
+    return jsonify({"error": "Invalid token"}), 401
+
+
+@jwt.expired_token_loader
+def handle_expired_token_error(err):
+    return jsonify({"error": "Token has expired"}), 401
+
+
+@jwt.revoked_token_loader
+def handle_revoked_token_error(err):
+    return jsonify({"error": "Token has been revoked"}), 401
+
+
+@jwt.needs_fresh_token_loader
+def handle_needs_fresh_token_error(err):
+    return jsonify({"error": "Fresh token required"}), 401
 
 
 if __name__ == "__main__":
