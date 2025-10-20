@@ -1,3 +1,4 @@
+-- Script that create a 2nd table with some values
 CREATE TABLE IF NOT EXISTS `second_table` (
     `id` INT,
     `name` VARCHAR(256),
