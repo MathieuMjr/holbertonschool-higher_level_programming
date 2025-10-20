@@ -1,0 +1,1 @@
+Here are script written to practice SQL
