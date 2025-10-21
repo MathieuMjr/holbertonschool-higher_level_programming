@@ -1,0 +1,7 @@
+-- script that create a table
+USE hbtn_0d_2;
+
+CREATE TABLE `force_name`(
+    `id` INT,
+    `name` VARCHAR(256) NOT NULL
+);
