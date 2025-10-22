@@ -19,15 +19,15 @@ if __name__ == "__main__":
     # créer un curseur - permet d'avoir plusieurs environnement
     # sur la même connexion à la DB ?
 
-    cur.execute("SELECT * FROM states ORDER BY id")  # envoie une requête
-    states = cur.fetchall()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")  # envoie une requête
+    rows = cur.fetchall()
     # récupère les lignes renvoyées par la base
     # et les stock en liste de tuples
     # on peut récupérer une ligne à la fois ou un nombre n de lignes
     # avec fetchone() et fetchmany(n)
 
-    for id, name in states:
-        print(f"({id}, '{name}')")
+    for element in rows:
+        print(element)
 
     cur.close()
     db.close()
