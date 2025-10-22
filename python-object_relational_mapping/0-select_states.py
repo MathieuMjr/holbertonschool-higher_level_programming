@@ -2,13 +2,16 @@
 if __name__ == "__main__":
     import MySQLdb
     import sys
-    user = sys.argv[1]
-    mdp = sys.argv[2]
-    db_name = sys.argv[3]
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
     # function to connect to a MySQL database
     db = MySQLdb.connect(
-        host='localhost', user=user, passwd=mdp, db=db_name, port=3306)
+        host="localhost", user=username, passwd=password,
+        db=database, port=3306
+    )
     cur = db.cursor()
     # créer un curseur - permet d'avoir plusieurs environnement
     # sur la même connexion à la DB ?
