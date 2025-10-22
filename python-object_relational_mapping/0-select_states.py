@@ -19,7 +19,8 @@ if __name__ == "__main__":
     # créer un curseur - permet d'avoir plusieurs environnement
     # sur la même connexion à la DB ?
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")  # envoie une requête
+    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
+    # envoie une requête
     rows = cur.fetchall()
     # récupère les lignes renvoyées par la base
     # et les stock en liste de tuples
