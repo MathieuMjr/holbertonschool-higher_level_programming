@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+This module contains a script that does a data
+request to database"""
 if __name__ == "__main__":
     import MySQLdb
     import sys
