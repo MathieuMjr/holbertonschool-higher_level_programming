@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # sur la même connexion à la DB ?
 
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
     # envoie une requête
     rows = cur.fetchall()
     # récupère les lignes renvoyées par la base
