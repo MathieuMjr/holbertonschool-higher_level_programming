@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
 """
 This module contains a schema for database hbtn_0e_6_usa
 """
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
 
