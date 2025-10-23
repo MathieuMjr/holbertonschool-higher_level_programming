@@ -19,7 +19,8 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database,
-    )
+        )
+
     cur = db.cursor()
     # créer un curseur - permet d'avoir plusieurs environnement
     # sur la même connexion à la DB ?
