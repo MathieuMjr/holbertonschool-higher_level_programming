@@ -21,10 +21,8 @@ if __name__ == "__main__":
     cur = db.cursor()
     # créer un curseur - permet d'avoir plusieurs environnement
     # sur la même connexion à la DB ?
-
-    cur.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY {}"
-        "ORDER BY id ASC".format(name_arg))
+    query = "SELECT * FROM states WHERE name LIKE BINARY {} ORDER BY id ASC".format(name_arg)
+    cur.execute(query)
     # envoie une requête
     rows = cur.fetchall()
     # récupère les lignes renvoyées par la base
