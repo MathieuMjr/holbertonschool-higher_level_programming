@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
 This module contains a script that does a data
-request to database"""
-if __name__ == "__main__":
-    import MySQLdb
-    import sys
+request to database
+"""
 
+import MySQLdb
+import sys
+
+if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -20,7 +22,7 @@ if __name__ == "__main__":
     # sur la même connexion à la DB ?
 
     cur.execute(
-        "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     # envoie une requête
     rows = cur.fetchall()
     # récupère les lignes renvoyées par la base
