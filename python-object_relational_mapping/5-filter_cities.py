@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     cur.execute(
         "SELECT c.name FROM cities AS c "
-        "LEFT JOIN states AS s ON s.id = c.state_id"
+        "LEFT JOIN states AS s ON s.id = c.state_id "
         "WHERE s.name LIKE BINARY %s", (state,))
     # envoie une requête
     rows = cur.fetchall()
