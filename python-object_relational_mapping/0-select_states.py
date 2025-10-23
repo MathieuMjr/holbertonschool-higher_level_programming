@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
     Script to get all states from the database hbtn_0e_0_usa
 
@@ -9,10 +9,10 @@
     SORTED BY :
         ASC states.id
 """
+import MySQLdb
+import sys
 
 if __name__ == '__main__':
-    import MySQLdb
-    import sys
 
     # Recover argument from user
     user = sys.argv[1]
