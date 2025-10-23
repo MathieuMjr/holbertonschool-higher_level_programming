@@ -14,10 +14,10 @@ if __name__ == "__main__":
     # function to connect to a MySQL database
     db = MySQLdb.connect(
         host="localhost",
+        port=3306,
         user=username,
         passwd=password,
         db=database,
-        port=3306
     )
     cur = db.cursor()
     # créer un curseur - permet d'avoir plusieurs environnement
