@@ -8,6 +8,10 @@ Base = declarative_base()
 
 
 class State(Base):
+    """
+    This class is a schema
+    of the states table
+    """
     __tablename__ = 'states'
 
     id = Column(Integer, autoincrement=True,
