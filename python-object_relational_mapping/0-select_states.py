@@ -1,33 +1,38 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-This module lists all states from a specified database
-"""
+This module contains a script that does a data
+request to database"""
+
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
-    # Get MySQL credentials and database name from command_line arguments
-    user = sys.argv[1]
+    username = sys.argv[1]
     password = sys.argv[2]
-    db_name = sys.argv[3]
+    database = sys.argv[3]
 
-    # Establish database connection
-    db = MySQLdb.connect(host='localhost', user=user,
-                         passwd=password, database=db_name, port=3306)
-
-    # Create a cursor to execute queries
+    # function to connect to a MySQL database
+    db = MySQLdb.connect(
+        host="localhost",
+        user=username,
+        passwd=password,
+        db=database,
+        port=3306
+    )
     cur = db.cursor()
+    # créer un curseur - permet d'avoir plusieurs environnement
+    # sur la même connexion à la DB ?
 
-    # SQL query: Selects all 'id' and 'name' from the 'states' table
-    cur.execute("SELECT id, name FROM states ORDER BY id ASC;")
-    # Fetch all results from the executed query
-    states = cur.fetchall()
+    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
+    # envoie une requête
+    rows = cur.fetchall()
+    # récupère les lignes renvoyées par la base
+    # et les stock en liste de tuples
+    # on peut récupérer une ligne à la fois ou un nombre n de lignes
+    # avec fetchone() et fetchmany(n)
 
-    # Print each state
-    for id, name in states:
-        print(f"({id}, '{name}')")
+    for element in rows:
+        print(element)
 
-    # Close the cursor and the database connection
     cur.close()
     db.close()
