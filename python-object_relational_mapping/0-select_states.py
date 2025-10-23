@@ -1,32 +1,35 @@
 #!/usr/bin/python3
 """
-This module contains a script that does a data
-request to database
+    Script to get all states from the database hbtn_0e_0_usa
+
+    ARGUMENTS :
+            mysql username
+            mysql password
+            database name
+    SORTED BY :
+        ASC states.id
 """
 
-import MySQLdb
-import sys
+if __name__ == '__main__':
+    import MySQLdb
+    import sys
 
-if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    # Recover argument from user
+    user = sys.argv[1]
+    pswd = sys.argv[2]
+    db_name = sys.argv[3]
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database,
-    )
+    # connect database
+    db = MySQLdb.connect(host='localhost', user=user,
+                         passwd=pswd, db=db_name, port=3306)
 
+    # create cursor
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    rows = cur.fetchall()
+    # executing MySQL Queries in Python
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 
-    for row in rows:
+    # display
+    all_states = cur.fetchall()
+    for row in all_states:
         print(row)
-
-    cur.close()
-    db.close()
