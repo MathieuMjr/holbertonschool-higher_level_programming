@@ -23,10 +23,9 @@ if __name__ == "__main__":
     # réalisation d'une query Select id, name from state order by id où id =1
     # sans first, res est un objet Query à parcourir pour accéder aux instances
     res = session.query(State).filter(
-        State.name.ilike(f"{state_name}")).order_by(State.id)
+        State.name.ilike(f"{state_name}")).order_by(State.id).first()
     if res:
-        for instance in res:
-            print(f"{instance.id}")
+        print(f"{res.id}")
     else:
         print("Not found")
 
