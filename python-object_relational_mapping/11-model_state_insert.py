@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 This module contain query to add a new
 instance of a class State to db
@@ -22,11 +22,7 @@ if __name__ == "__main__":
     new_state = State(name='Louisiana')
     session.add(new_state)
     session.commit()
-    res = session.query(State).filter(State.name == new_state.name).first()
-    if res:
-        print(f"{res.id}")
-    else:
-        print("Not found")
+    print(f"{new_state.id}")
 
     session.close()
     engine.dispose()
