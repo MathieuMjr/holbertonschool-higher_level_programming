@@ -19,9 +19,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()  # creation d'une sessions
 
+    state_name = sys.argv[4]
     # réalisation d'une query Select id, name from state order by id où id =1
     # sans first, res est un objet Query à parcourir pour accéder aux instances
-    res = session.query(State).filter(State.name == 'Texas').order_by(State.id)
+    res = session.query(State).filter(
+        State.name == state_name).order_by(State.id)
     if res:
         for instance in res:
             print(f"{instance.id}")
