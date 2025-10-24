@@ -25,7 +25,7 @@ if __name__ == "__main__":
     if state:
         print(f"{state.id}: {state.name}")
     else:
-        print("Not found")
+        print("")
 
     session.close()
     engine.dispose()
