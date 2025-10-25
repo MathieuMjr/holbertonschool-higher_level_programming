@@ -4,7 +4,7 @@ This module contain query to add a new
 instance of a class State to db
 """
 import sys
-from model_state import Base
+from model_state import Base, State
 from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
