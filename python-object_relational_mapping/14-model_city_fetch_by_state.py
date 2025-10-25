@@ -20,10 +20,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()  # creation d'une sessions
 
-res = session.query(City).order_by(City.id)
-if res:
-    for instance in res:
-        print((f"{instance.state.name}: ({instance.id}) {instance.name}"))
+    res = session.query(City).order_by(City.id)
+    if res:
+        for instance in res:
+            print((f"{instance.state.name}: ({instance.id}) {instance.name}"))
 
-session.close()
-engine.dispose()
+    session.close()
+    engine.dispose()
