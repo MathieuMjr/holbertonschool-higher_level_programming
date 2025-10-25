@@ -13,7 +13,7 @@ from model_state import Base
 class City(Base):
     """
     This class is a schema
-    of the states table
+    of the City table
     """
     __tablename__ = 'cities'
 
