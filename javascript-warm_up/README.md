@@ -1,0 +1,1 @@
+Script in javascript to practice at HolbertonSchool
