@@ -3,12 +3,12 @@ const toggleHeader = document.querySelector('#toggle_header');
 
 function toggleGreenRed () {
   if (header.classList.contains('red')) {
-  header.classList.remove('red');
-  header.classList.add('green');
+    header.classList.remove('red');
+    header.classList.add('green');
   } else {
-  header.classList.remove('green');
-  header.classList.add('red');
+    header.classList.remove('green');
+    header.classList.add('red');
   }
-} /*ajoute le style sans écraser les autres styles*/
+}
 
 toggleHeader.addEventListener('click', toggleGreenRed);
