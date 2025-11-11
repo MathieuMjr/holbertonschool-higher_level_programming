@@ -9,6 +9,8 @@ while (process.argv[counter] !== undefined) {
   if (biggest < current) {
     secondBiggest = biggest;
     biggest = current;
+  } else if (secondBiggest < current) {
+    secondBiggest = current;
   }
   counter++;
 }
