@@ -1,23 +1,15 @@
 #!/usr/bin/node
-let array = []
-let counter = 2;
+
 let biggest = 0;
-let counter2 = 0;
-let scdbiggest = 0;
+let secondBiggest = 0;
+let counter = 2;
 
 while (process.argv[counter] !== undefined) {
-  array.push(parseInt(process.argv[counter]));
-  if (biggest < parseInt(process.argv[counter])) {
-    biggest = parseInt(process.argv[counter]);
+  const current = parseInt(process.argv[counter]);
+  if (biggest < current) {
+    secondBiggest = biggest;
+    biggest = current;
   }
   counter++;
 }
-
-while (counter2 !== counter - 2) {
-    if (scdbigget)
-}
-if (counter > 3) {
-  console.log(biggest);
-} else {
-  console.log(0);
-}
+console.log(secondBiggest);
