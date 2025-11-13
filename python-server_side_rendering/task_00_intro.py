@@ -30,7 +30,7 @@ def generate_invitations(template, attendees):
         for placeholder in placeholders:
             value = element.get(placeholder)
             if not value:
-                value = f"{placeholder}: N/A"
+                value = "N/A"
             content = content.replace("{" + placeholder + "}", str(value))
         with open(f'output_{i}.txt', 'w', encoding='utf-8') as f:
             f.write(content)
