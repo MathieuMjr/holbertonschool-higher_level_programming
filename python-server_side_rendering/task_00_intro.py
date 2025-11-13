@@ -28,6 +28,9 @@ def generate_invitations(template, attendees):
     for i, element in enumerate(attendees, start=1):
         content = template
         for placeholder in placeholders:
-            content = content.replace("{" + placeholder + "}", str(element.get(placeholder, f"{placeholder}: N/A" )))
+            value = element.get(placeholder)
+            if not value:
+                value = f"{placeholder}: N/A"
+            content = content.replace("{" + placeholder + "}", str(value))
         with open(f'output_{i}.txt', 'w', encoding='utf-8') as f:
             f.write(content)
