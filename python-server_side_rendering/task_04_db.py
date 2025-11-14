@@ -53,7 +53,7 @@ def products():
     elif source == 'json':
         with open('products.json', 'r') as file:
             content = json.load(file)
-    elif source == 'db':
+    elif source == 'sql':
         conn = sqlite3.connect("products.db")
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Products")
