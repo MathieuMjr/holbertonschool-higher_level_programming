@@ -24,7 +24,10 @@ def contact():
 def items():
     with open('items.json', 'r') as file:
         content = json.load(file)
-    datas = content['items']
+    if content == "":
+        datas = []
+    else:
+        datas = content['items']
     return render_template('items.html', datas=datas)
 # Il faut nommer la variable qu'on envoit dans le html pour la réutiliser sous
 # le même nom
