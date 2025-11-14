@@ -1,0 +1,37 @@
+<!doctype html>
+   <html lang="en">
+   <head>
+       <title>My Flask App</title>
+   </head>
+   <body>
+    {% include "header.html" %}
+        <h1>Product display</h1>
+        <p>Content for the page.</p>
+        {% if error %}
+        <p> {{error}} </p>
+        {% else %}
+        <table>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for element in datas %}
+            <tr>
+                <th>{{ element.id }}</th>
+                <th>{{ element.name }}</th>
+                <th>{{ element.category }}</th>
+                <th>{{ element.price }}</th>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+        </table>
+        
+    {% include "footer.html" %}
+   </body>
+   </html>
