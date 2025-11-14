@@ -24,7 +24,7 @@ def contact():
 def items():
     with open('items.json', 'r') as file:
         content = json.load(file)
-    if content == "":
+    if not content:
         datas = []
     else:
         datas = content['items']
